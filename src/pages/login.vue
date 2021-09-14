@@ -4,7 +4,7 @@
         <q-card :square="$q.screen.lt.md" :class="' ' + ($q.screen.gt.xs?'fixed-center':'fixed-top')" style="min-width: 200px;" >
             <q-toolbar class="text-primary">
                 <q-space />
-                <q-img src="logoTransparent.png" width="150px" class="q-mt-sm" />
+                <q-img src="logoTransparent.jpeg" width="150px" class="q-mt-sm" />
                 <q-space />
                 
             </q-toolbar>
