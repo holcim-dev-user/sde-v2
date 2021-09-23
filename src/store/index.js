@@ -6,6 +6,7 @@ import main from './main'
 import Brands from './Brands' //Brands
 import Companies from './Companies' //
 import Camiones from './Camiones' //
+import Choferes from './Choferes' //
 import Employees from './Employees' //Employees
 import Items from './Items'
 import Modules from './Modules' //Roles Companies
@@ -24,6 +25,7 @@ export default function (/* { ssrContext } */) {
       main
       ,Brands
       ,Camiones
+      ,Choferes
       ,Companies
       ,Employees
       ,Items

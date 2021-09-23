@@ -47,6 +47,12 @@ const routes = [
           ,{ path: ':id', component: () => import('pages/RootMaster/Camiones/edit.vue') }
         ] 
       }
+      ,{ path: 'RootMaster/Choferes', component: () => import('pages/RootMaster/Choferes/main.vue')
+        ,children: [
+           { path: '/', component: () => import('../components/mainView/mainView.vue') }
+          ,{ path: ':id', component: () => import('pages/RootMaster/Choferes/edit.vue') }
+        ] 
+      }
       ,{ path: 'RootMaster/Items', component: () => import('pages/RootMaster/Items/main.vue')
         ,children: [
            { path: '/', component: () => import('../components/mainView/mainView.vue') }
