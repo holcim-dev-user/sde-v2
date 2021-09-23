@@ -3,185 +3,38 @@ import Vuex from 'vuex'
 //import { store } from 'quasar/wrappers'
 
 import main from './main'
-import Items from './Items'
-import Partners from './Partners'
-import Users from './Users' //Users Module
-import Roles from './Roles' //Roles Module
-import Companies from './Companies' //Roles Companies
-import Modules from './Modules' //Roles Companies
-import Bitaplaces from './Bitaplaces' //Bitacora Places Companies
-import Bitacars from './Bitacars' //Bitacars
-import Bitaevents from './Bitaevents' //Bitacora
-import Bitapeople from './Bitapeople' //Ingresos y Salidas
-import Bitarides from './Bitarides' //Ingresos y Salidas
-import Bitadashboard from './Bitadashboard' //Ingresos y Salidas
-//import Bitaconsola from './Bitaconsola' //Bitacora Consola
-//import BitaRoutes from './BitaRoutes' //Bitacora Routes GPS
-//import BitaRounds from './BitaRounds' //Bitacora Rounds
-import Notifications from './Notifications' //Notifications
-import Employees from './Employees' //Employees
-//import Equipistas from './Equipistas' //Equipistas
-//import Equipista from './Equipista' //Equipista
-import ENSEquipistas from './ENSEquipistas' //ENSEquipistas
-import ENSEquipista from './ENSEquipista' //ENSEquipista
-import ENSTeams from './ENSTeams' //ENSTeams
-import ENSServicios from './ENSServicios' //ENSServicios
-import ENSLibros from './ENSLibros' //ENSLibros
-import ENSJobSearch from './ENSJobSearch' //ENSJobSearch
-import ENSMeet from './ENSMeet' //ENSMeet
-import ENSMeetPilot from './ENSMeetPilot' //ENSMeetPilot
-import ENSMeetWork from './ENSMeetWork' //ENSMeetWork
-import ENSCalendar from './ENSCalendar' //ENSCalendar
-
-import ChartAccount from './ChartAccount' //ChartAccount
-import Taxes from './Taxes' //Taxes
-import TaxesMaster from './TaxesMaster' //TaxesMaster
-import AccPeriods from './AccPeriods' //AccPeriods
-import accPaymentMethods from './accPaymentMethods' //accPaymentMethods
-import AccMoves from './AccMoves' //AccMoves
-import SCHPersonas from './SCHPersonas' //SCHPersonas
-import SCHPersona from './SCHPersona' //SCHPersona
-import SCHApostolados from './SCHApostolados' //SCHApostolados
-import SCHFormaciones from './SCHFormaciones' //SCHFormaciones
-import SCHGroups from './SCHGroups' //SCHGroups
-import SCHSectores from './SCHSectores' //SCHSectores
-import Warehouses from './Warehouses' //Warehouses
-import UoM from './UoM' //UoM
 import Brands from './Brands' //Brands
-import InvTypes from './InvTypes' //InvTypes
-import mktPR from './mktPR' //mktPR
-import mktPO from './mktPO' //mktPO
-import mktPORet from './mktPORet' //mktPORet
-import casCasesTypes from './casCasesTypes' //casCasesTypes
-import casCasos from './casCasos' //casCasos
-import casClientes from './casClientes' //casClientes
-import casContracts from './casContracts' //casContracts
-import casInvoices from './casInvoices' //casInvoices
-import casLocations from './casLocations' //casLocations
-import casTasks from './casTasks' //casTasks
-import casTasksTypes from './casTasksTypes' //casTasksTypes
-import invIncoming from './invIncoming' //invIncoming
-import invOutgoing from './invOutgoing' //invOutgoing
-import invQuery from './invQuery' //invQuery
-import Payterms from './Payterms' //Payterms
-import partnerMasterGroups from './partnerMasterGroups' //partnerMasterGroups
-import accVoucherOut from './accVoucherOut' //partnerMasterGroups
-import accVoucherIn from './accVoucherIn' //partnerMasterGroups
-import invMasterGroups from './invMasterGroups' //invMasterGroups
-import Locations from './Locations' //Locations
-import accAP from './accAP' //Cuentas x Pagar
-import accRet from './accRet' //Retenciones en Compra
-import mfgOrders from './mfgOrders' //mfgOrders
-import mktMFG from './mktMFG' //mktMFG
-import mktMFGreturn from './mktMFGreturn' //mktMFGreturn
-import mktPRD from './mktPRD' //mktPRD
-import mktPRDreturn from './mktPRDreturn' //mktPRDreturn
-import mfgLocations from './mfgLocations' //mfgLocations
-import mfgTypes from './mfgTypes' //mfgTypes
-import mfgBOM from './mfgBOM' //mfgBOM
-
-import RewardTransactions from './RewardTransactions' //RewardTransactions
-import RewardRanges from './RewardRanges' //RewardRanges
-
+import Companies from './Companies' //
+import Camiones from './Camiones' //
+import Employees from './Employees' //Employees
+import Items from './Items'
+import Modules from './Modules' //Roles Companies
+import Notifications from './Notifications' //Notifications
+import Partners from './Partners'
+import Roles from './Roles' //Roles Module
+import UoM from './UoM' //UoM
+import Users from './Users' //Users Module
+import Warehouses from './Warehouses' //Warehouses
 
 Vue.use(Vuex)
 
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      main,
-      Items,
-      Partners
-      //System
-      ,Users
-      ,Roles
+      main
+      ,Brands
+      ,Camiones
       ,Companies
-      ,Modules
-      //Bitacora
-      ,Bitaplaces
-      ,Bitacars
-      ,Bitaevents
-      ,Bitapeople
-      ,Bitarides
-      ,Bitadashboard
-      /*
-      ,Bitaconsola
-      ,BitaRoutes
-      ,BitaRounds
-      */
-
-      //Others
-      ,Notifications
       ,Employees
-      //ENS
-      ,ENSEquipistas
-      ,ENSEquipista
-      ,ENSTeams
-      ,ENSServicios
-      ,ENSLibros
-      ,ENSJobSearch
-      ,ENSMeet
-      ,ENSMeetPilot
-      ,ENSMeetWork
-      ,ENSCalendar
-      //FINANCES
-      ,ChartAccount
-      ,Taxes
-      ,TaxesMaster
-      ,AccPeriods
-      ,AccMoves
-      ,accPaymentMethods
-      ,partnerMasterGroups
-      ,invMasterGroups
-      ,Payterms
-      ,Locations
-      //Bank
-      ,accVoucherIn
-      ,accVoucherOut
-      //Schoenstatt
-      ,SCHPersonas
-      ,SCHPersona
-      ,SCHApostolados
-      ,SCHFormaciones
-      ,SCHGroups
-      ,SCHSectores
-      //Master
+      ,Items
+      ,Partners
+      ,Roles
+      ,Users
+      ,Modules
+      ,Notifications
       ,Warehouses
       ,UoM
-      ,Brands
-      ,InvTypes
-      //mkt PURCHASE
-      ,mktPR
-      ,mktPO
-      ,mktPORet
-      ,accAP
-      ,accRet
-      //Inventory
-      ,invIncoming
-      ,invOutgoing
-      ,invQuery
-      //Cases
-      ,casCasesTypes
-      ,casCasos
-      ,casClientes
-      ,casLocations
-      ,casTasks
-      ,casTasksTypes
-      ,casContracts
-      ,casInvoices
-      //MFG
-      ,mfgOrders
-      ,mktMFG
-      ,mktMFGreturn
-      ,mktPRD
-      ,mktPRDreturn
-      ,mfgLocations
-      ,mfgTypes
-      ,mfgBOM
-      //Rewards
-      ,RewardRanges
-      ,RewardTransactions
-    },
+      },
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: process.env.DEV
