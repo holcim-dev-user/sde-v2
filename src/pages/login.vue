@@ -2,9 +2,9 @@
 <div>
     <q-layout view="hHh lpr lFf" > <!-- :class="isOSdarkMode?'bg-grey-10':'bg-grey-2'"  -->
         <q-card :square="$q.screen.lt.md" :class="' ' + ($q.screen.gt.xs?'fixed-center':'fixed-top')" style="min-width: 200px;" >
-            <q-toolbar class="text-primary">
+            <q-toolbar class="text-primary no-padding">
                 <q-space />
-                <q-img src="logoTransparent.jpeg" width="150px" class="q-mt-sm" />
+                <q-img src="logoTransparent.jpeg" width="100%" style="border-top-right-radius: 5px; border-top-left-radius: 5px;"/>
                 <q-space />
                 
             </q-toolbar>

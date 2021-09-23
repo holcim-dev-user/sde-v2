@@ -1,8 +1,6 @@
 
 const routes = [
   { path: '/login', name: 'login', component: () => import('pages/login.vue') },
-  { path: '/loginENS', name: 'loginENS', component: () => import('pages/loginENS.vue') },
-  { path: '/loginSchoenstatt', name: 'loginSchoenstatt', component: () => import('pages/loginSchoenstatt.vue') },
   { path: '/forgotPassword', name: 'forgotPassword', component: () => import('pages/forgotPassword.vue') },
   {
     path: '/', component: () => import('layouts/MainLayout.vue'), meta:{ breadcrumb: [ {name: 'Inicio', icon: 'fas fa-home' } ] },
