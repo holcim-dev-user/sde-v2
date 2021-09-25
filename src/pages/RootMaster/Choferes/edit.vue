@@ -21,10 +21,11 @@ export default ({
             spSelectName: 'spChoferesSelectEdit',
             spUpdateName: 'spChoferesUpdate',
             toolbarTitle: "Choferes",
-            toolbarTitleName: "basic.nom?chofer",
+            toolbarTitleName: "basic.nom_chofer",
             startTab: 'basic',
             moduleTabs: [
-                { tabName: 'basic', iconName: 'fas fa-info-circle', textLabel: 'Información de Chofer', isTabDisable: false, rootPath:'pages', importPath: 'RootMaster/Chofer/ChoferEditBasic.vue' },
+                { tabName: 'basic', iconName: 'fas fa-info-circle', textLabel: 'Información de Chofer', isTabDisable: false, rootPath:'pages', importPath: 'RootMaster/Choferes/ChoferesEditBasic.vue' },
+                { tabName: 'picture', iconName: 'fas fa-camera', textLabel: 'Foto de Perfil', isTabDisable: false, rootPath:'components', importPath: 'editForm/editFormPicture.vue', pictureConfig: { section: 'basic', upload_file_name: 'userPhoto', attach_id: 'picture_attach_ID'} },
                 { tabName: 'history', iconName: 'fas fa-history', textLabel: 'Auditoría de Cambios', isTabDisable: false, rootPath:'components', importPath: 'historyView/historyView' }
             ],
             //name es el nombre del property en el editData (vuex)
