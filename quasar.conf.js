@@ -103,6 +103,7 @@ module.exports = function (/* ctx */) {
         'SessionStorage',//nuevo
         'LocalStorage',//nuevo
         'Dialog',//nuevo
+        'AppFullscreen',//nuevo
       ]
     },
 

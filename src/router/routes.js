@@ -91,6 +91,7 @@ const routes = [
       }
     ]
   },
+  { path: '/device', name: 'login', component: () => import('pages/RootDevice/device.vue') },
 
   // Always leave this as last one,
   // but you can also remove it
