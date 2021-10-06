@@ -50,6 +50,7 @@ export default {
                 }
         },
         async created() {
+                console.dir('Pruebas');
                 this.$q.sessionStorage.clear();//Clear Storage
                 this.$q.sessionStorage.set('pathname',window.location.pathname)
                 Object.keys(this.$store.state).filter(y=>y=='main').map(x=>{
