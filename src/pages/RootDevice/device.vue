@@ -1,5 +1,40 @@
 <template>
 <div>
+        <div class="q-pa-md">
+                <q-stepper
+                        v-model="step"
+                        vertical
+                        color="primary"
+                        animated
+                        >
+                        <q-step
+                                :name="1"
+                                title="Identificación de Dispositivo"
+                                icon="fas fa-network-wired"
+                                :done="step > 1"
+                        >
+                                Obteniendo Dirección IP...
+                        </q-step>
+
+                        <q-step
+                                :name="2"
+                                title="Obtener Formulario"
+                                icon="far fa-window-maximize"
+                                :done="step > 2"
+                                >
+                                        Obteniendo Formulario para Dirección IP: {{myIP}}...
+                        </q-step>
+
+                        <q-step
+                                :name="3"
+                                title="Redireccionando"
+                                icon="assignment"
+                        >
+                                Redireccionando a {{formToOpen}}...
+                        </q-step>
+                </q-stepper>
+         </div>
+
         <q-btn
                 color="primary"
                 @click="$q.fullscreen.toggle()"
@@ -8,6 +43,7 @@
                 />
         <p>{{$q.platform}}</p>
         <p>{{$q.sessionStorage.getItem('urlPath')}}</p>
+        <p>Mi dirección IP = {{myIP}}</p>
 </div>
 </template>
 
@@ -16,6 +52,13 @@ import { colors } from 'quasar'
 
 export default {
         name: 'device',
+        data() {
+                return {
+                        step: 1,
+                        myIP: null,
+                        formToOpen: null,
+                }
+        },
         methods:{
                 enterFullScreen() {
                        this.$q.fullscreen.toggle()
@@ -47,10 +90,27 @@ export default {
                                 ,multiLine: true, html: true
                         })
                         })
+                },
+                async getForm(){
+                        const url = this.$q.sessionStorage.getItem('urlPath') + 'spEquipmentGetUI'
+                        await this.$axios({
+                                method: 'GET',
+                                url: url,
+                                params: {
+                                        userCompany: 1,
+                                        ipAddress: this.myIP,
+                                }
+                        }).then(response => {
+                                this.formToOpen = JSON.parse(response.data[0].basic).urlRedirect
+                                setTimeout(() => {  this.step = 3;  }, 3000);
+                                //return response;
+                        }).catch(error => {
+                                console.dir(error);
+                                return error;
+                        })
                 }
         },
         async created() {
-                console.dir('Pruebas 1');
                 this.$q.sessionStorage.clear();//Clear Storage
                 this.$q.sessionStorage.set('pathname',window.location.pathname)
                 Object.keys(this.$store.state).filter(y=>y=='main').map(x=>{
@@ -61,10 +121,9 @@ export default {
                 const url = this.$q.sessionStorage.getItem('urlPath') + 'getIPaddress'
                 this.$axios.get(url)
                 .then(response => {
-                        console.dir('OK')
-                        console.dir(response);
+                        this.myIP = response.data;
+                        setTimeout(() => {  this.step = 2;  this.getForm(); }, 3000);
                 }).catch(error => {
-                        console.dir('Error')
                         console.dir(error)
                 })
         }
